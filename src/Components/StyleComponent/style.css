@@ -117,8 +117,8 @@
 
     .container .row .vglasses__card .vglasses__model img {
         top: 26%;
-        left: 22%;
-        width: 283px;
+        left: 21%;
+        width: 290px;
         height: 92px;
     }
 
@@ -126,11 +126,11 @@
         margin-bottom: 50px;
     }
 
-    .vglasses__info h1{
+    .vglasses__info h1 {
         font-size: 30px;
     }
 
-    .vglasses__info p{
+    .vglasses__info p {
         font-size: 20px;
     }
 }
@@ -141,17 +141,27 @@
     }
 
     .container .row .vglasses__card .vglasses__model img {
-        top: 28%;
-        left: 25%;
-        width: 174px;
+        top: 26%;
+        left: 21%;
+        width: 172px;
         height: 57px;
     }
 
-    .vglasses__info h1{
-        font-size: 30px;
+    .container .row .left,
+    .container .row .right {
+        display: flex;
+        justify-content: center;
     }
 
-    .vglasses__info p{
+    .vglasses__card {
+        width: 300px;
+    }
+
+    .vglasses__info h1 {
+        font-size: 20px;
+    }
+
+    .vglasses__info p {
         font-size: 15px;
     }
 }

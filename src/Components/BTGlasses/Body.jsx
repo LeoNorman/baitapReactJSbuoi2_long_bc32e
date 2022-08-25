@@ -5,6 +5,7 @@ import data from './dataGlasses.json'
 export default class
   extends Component {
   state = {
+    isHide: false,
     isShow: true,
     kinh: {
       "id": 1,
@@ -19,7 +20,7 @@ export default class
       <div className='body'>
         <div className="container">
           <div className="row justify-content-around">
-            <div className="col-12 col-md-6 col-lg-4 left">
+            <div className="col-md-6 col-lg-4 left">
               <div class="vglasses__card">
                 <div class="vglasses__model" id="avatar">
                   <div className="test_glasses">
@@ -32,17 +33,21 @@ export default class
                 </div>
               </div>
             </div>
-            <div className="col-12 col-md-6 col-lg-4 right">
+            <div className="col-md-6 col-lg-4 right">
               <div class="vglasses__card">
                 <div class="vglasses__model" id="avatar">
-                  <div className="test_glasses">
-                    <img src={this.state.kinh.url} alt="v7" />
+                  {this.state.isHide && (
+                    <div className="test_glasses">
+                      <img src={this.state.kinh.url} alt="v7" />
+                    </div>
+                  )}
+                </div>
+                {this.state.isHide && (
+                  <div id="glassesInfo" class="vglasses__info">
+                    <h1>{this.state.kinh.name}</h1>
+                    <p>{this.state.kinh.desc}</p>
                   </div>
-                </div>
-                <div id="glassesInfo" class="vglasses__info">
-                  <h1>{this.state.kinh.name}</h1>
-                  <p>{this.state.kinh.desc}</p>
-                </div>
+                )}
               </div>
             </div>
           </div>
@@ -55,7 +60,8 @@ export default class
                       <a
                         onClick={() => {
                           this.setState({
-                            kinh: glass
+                            kinh: glass,
+                            isHide: true
                           })
                         }}>
                         <img src={`./glassesImage/g${glass.id}.jpg`} alt="" />
